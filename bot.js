@@ -26,6 +26,15 @@ client.on("message", (message) => {
   const argsKerang = message.content.slice("apakah".length).split(/ +/);
   if (message.content.slice(0, 6) === "Apakah") {
     // send back "Pong." to the channel the message was sent in
+    if (Math.floor(Math.random() * 10 > 7)) {
+      return message.channel.send(jawaban[2]);
+    } else {
+      if (Math.random() * 10 > 3) {
+        return message.channel.send(jawaban[1]);
+      } else {
+        return message.channel.send(jawaban[0]);
+      }
+    }
     return message.channel.send(jawaban[Math.floor(Math.random() * 3)]);
   }
 
