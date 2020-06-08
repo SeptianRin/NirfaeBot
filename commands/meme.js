@@ -1,12 +1,12 @@
-const got = require("got");
-const Discord = require("discord.js");
 module.exports = {
   name: "meme",
   description: "retrieve meme!",
   execute(message, args) {
-    const embed = new Discord.RichEmbed();
+    const got = require("got");
+    console.log("a");
     got("https://www.reddit.com/r/memes/random/.json")
       .then((response) => {
+        console.log("b");
         let content = JSON.parse(response.body);
         let permalink = content[0].data.children[0].data.permalink;
         let memeUrl = `https://reddit.com${permalink}`;
@@ -15,11 +15,14 @@ module.exports = {
         let memeUpvotes = content[0].data.children[0].data.ups;
         let memeDownvotes = content[0].data.children[0].data.downs;
         let memeNumComments = content[0].data.children[0].data.num_comments;
-        embed.addField(`${memeTitle}`, `[View thread](${memeUrl})`);
-        embed.setImage(memeImage);
-        embed.setFooter(
-          `👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`
-        );
+        console.log("c");
+        const embed = new Discord.MessageEmbed()
+          .setTitle(`${memeTitle}`, `[View thread](${memeUrl})`)
+          .setImage(memeImage)
+          .setFooter(
+            `👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`
+          );
+        console.log("d");
         message.channel
           .send(embed)
           .then((sent) =>
