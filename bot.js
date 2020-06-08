@@ -23,8 +23,8 @@ client.on("ready", () => {
 
 client.on("message", (message) => {
   let jawaban = ["Ya", "Tidak", "Bisa jadi"];
-  const argsKerang = message.content.slice("apakah".length).split(/ +/);
-  if (message.content.slice(0, 6) === "Apakah") {
+  const argsKerang = message.content.slice(0, 6);
+  if (argsKerang.toLowerCase() === "apakah") {
     // send back "Pong." to the channel the message was sent in
     if (Math.floor(Math.random() * 10 > 7)) {
       return message.channel.send(jawaban[2]);
