@@ -1,5 +1,5 @@
 {
-  "name": "NirfaeBot",
+  "name": "nirfaebot",
   "description": "Your very nirfaedah bot for your everyday",
   "version": "0.0.0",
   "main": "bot.js",
@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "discord.js": "11.1.0",
+    "got": "^11.3.0",
     "request": "2.81.0"
   }
 }
