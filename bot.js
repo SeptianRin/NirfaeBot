@@ -22,23 +22,55 @@ client.on("ready", () => {
 });
 
 client.on("message", (message) => {
-  let jawaban = ["Ya", "Tidak", "Bisa jadi"];
+  if (message.author.bot) return;
+  let jawaban = [
+    "Ya",
+    "Tidak",
+    "Bisa jadi",
+    "**BACOT ANJING NANYA MULU LO NGENTOT**",
+  ];
   const argsKerang = message.content.slice(0, 6);
   if (argsKerang.toLowerCase() === "apakah") {
     // send back "Pong." to the channel the message was sent in
-    if (Math.floor(Math.random() * 10 > 7)) {
-      return message.channel.send(jawaban[2]);
-    } else {
-      if (Math.random() * 10 > 3) {
-        return message.channel.send(jawaban[1]);
-      } else {
-        return message.channel.send(jawaban[0]);
+    let string = message.content;
+    let argisi = string.split(" ");
+    argisi.shift();
+    let pilihan = [];
+    var toggleMode = false;
+
+    for (let i = 0; i < argisi.length; i++) {
+      if (argisi[i] == "atau") {
+        toggleMode = true;
+        pilihan.push(argisi.slice(0, i));
+        pilihan.push(argisi.slice(i + 1));
       }
     }
-    return message.channel.send(jawaban[Math.floor(Math.random() * 3)]);
+
+    if (toggleMode === true) {
+      // apakah... atau...
+      return message.channel.send(
+        Math.random() * 2 > 1 ? pilihan[1].join(" ") : pilihan[0].join(" ")
+      );
+      toggleMode === false;
+    } else {
+      //apakah...
+      if (Math.random() * 100 > 95) {
+        return message.channel.send(jawaban[3]);
+      } else {
+        if (Math.floor(Math.random() * 100 > 80)) {
+          return message.channel.send(jawaban[2]);
+        } else {
+          if (Math.random() * 100 > 40) {
+            return message.channel.send(jawaban[1]);
+          } else {
+            return message.channel.send(jawaban[0]);
+          }
+        }
+      }
+    }
   }
 
-  if (!message.content.startsWith(prefix) || message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
 
   const args = message.content.slice(prefix.length).split(/ +/);
 
