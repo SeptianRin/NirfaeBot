@@ -17,5 +17,6 @@ module.exports = {
       .setFooter("bot paling ganteng");
 
     message.channel.send({ embed: cEmbed });
+    msg.delete();
   },
 };
