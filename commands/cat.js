@@ -14,7 +14,7 @@ module.exports = {
       .setAuthor("Nirfaedah & Ｅｓｔｅｔｉｋａ", message.guild.iconURL)
       .setImage(body.file)
       .setTimestamp()
-      .setFooter("bot paling ganteng");
+      .setFooter("bot commie");
 
     message.channel.send({ embed: cEmbed });
     msg.delete();

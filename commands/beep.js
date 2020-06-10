@@ -1,7 +1,7 @@
 module.exports = {
   name: "beep",
-  description: "Beeo!",
+  description: "Beep!",
   execute(message, args) {
-    message.channel.send("Boop.");
+    message.channel.send(`Boop. ${message.author}`);
   },
 };
