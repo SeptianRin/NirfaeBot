@@ -6,11 +6,11 @@ module.exports = {
   async execute(message, args) {
     let msg = await message.channel.send("Generating...");
 
-    let { body } = await superagent.get("https://meme-api.herokuapp.com/gimme");
+    let { body } = await superagent.get("https://meme-api.herokuapp.com/gimme/dankmemes");
     if (!{ body }) return message.channel.send("Bot Broke... nanya mulu sih");
 
     let cEmbed = new Discord.RichEmbed()
-      .setAuthor("Nirfaedah & Ｅｓｔｅｔｉｋａ", message.guild.iconURL)
+      .setAuthor(message.guild.name, message.guild.iconURL)
       .setTitle(body.title)
       .setImage(body.url)
       .setTimestamp()
