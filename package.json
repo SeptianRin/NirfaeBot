@@ -1,7 +1,7 @@
 {
   "name": "nirfaebot",
   "description": "Your very nirfaedah bot for your everyday",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
