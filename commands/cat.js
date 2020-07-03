@@ -15,7 +15,6 @@ module.exports = {
       .setAuthor("Nirfaedah & Ｅｓｔｅｔｉｋａ", message.guild.iconURL)
       .setImage(body.link)
       .setTimestamp()
-      .setDescription(deskripsi.fact)
       .setFooter("bot commie");
 
     message.channel.send({ embed: cEmbed });
