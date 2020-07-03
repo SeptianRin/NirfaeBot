@@ -99,4 +99,4 @@ client.on("message", (message) => {
 
 // THIS  MUST  BE  THIS  WAY
 
-client.login(token); //BOT_TOKEN is the Client Secret
+client.login(TOKEN); //BOT_TOKEN is the Client Secret
