@@ -9,7 +9,7 @@ module.exports = {
 
     let { body } = await superagent.get("https://some-random-api.ml/img/cat");
     let { deskripsi } = await superagent.get("https://some-random-api.ml/facts/cat");
-    if (!{ body }) return message.channel.send("Bot Broke... nanya mulu sih");
+    if (!({ body }|| {deskripsi})) return message.channel.send("Bot Broke... nanya mulu sih");
 
     let cEmbed = new Discord.RichEmbed()
       .setAuthor("Nirfaedah & Ｅｓｔｅｔｉｋａ", message.guild.iconURL)
