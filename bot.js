@@ -27,11 +27,10 @@ client.on("message", (message) => {
     "Ya",
     "Tidak",
     "Bisa jadi",
-    "**BACOT ANJING NANYA MULU LO NGENTOT**",
+    `**BACOT LO ${message.author} ANJING NANYA MULU LO NGENTOT**`,
   ];
   const argsKerang = message.content.slice(0, 6);
   if (argsKerang.toLowerCase() === "apakah") {
-    // send back "Pong." to the channel the message was sent in
     let string = message.content;
     let argisi = string.split(" ");
     argisi.shift();
