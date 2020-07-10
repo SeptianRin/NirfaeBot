@@ -10,12 +10,12 @@ module.exports = {
     let { body : gambar } = await superagent.get("https://some-random-api.ml/img/cat");
     let { body : fact } = await superagent.get("https://some-random-api.ml/facts/cat");
     //let { deskripsi } = await superagent.get("https://some-random-api.ml/facts/cat");
-    if (!{ body }) return message.channel.send("Bot Broke... nanya mulu sih");
+    if (!{ gambar,fact }) return message.channel.send("Bot Broke... nanya mulu sih");
 
     let cEmbed = new Discord.RichEmbed()
       .setAuthor("Nirfaedah & Ｅｓｔｅｔｉｋａ", message.guild.iconURL)
-      .setImage(body.gambar.link)
-      .setDescription(body.fact.fact)
+      .setImage(gambar.link)
+      .setDescription(fact.fact)
       .setTimestamp()
       .setFooter("bot commie");
 
