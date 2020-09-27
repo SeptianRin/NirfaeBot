@@ -68,6 +68,10 @@ client.on("message", (message) => {
       }
     }
   }
+  const berapa = message.content.slice(0, 13);
+  if (berapa.toLowerCase() === "berapa persen") {
+    return message.channel.send(Math.round(Math.random() * 100) + "%");
+  }
 
   if (!message.content.startsWith(prefix)) return;
 
@@ -97,5 +101,4 @@ client.on("message", (message) => {
 });
 
 // THIS  MUST  BE  THIS  WAY
-
 client.login(process.env.TOKEN); //BOT_TOKEN is the Client Secret
