@@ -6,7 +6,8 @@ module.exports = {
   description: "Add role ciduk to sinner",
   execute(message, args) {
     if (
-      message.member.roles.find((r) => r.name === "Dekan Fakultas") 
+      !(message.member.roles.cache.some(role => role.name === 'Ketua Program Pendidikan Nirfaedah') ||
+      message.member.roles.cache.some(role => role.name === 'Dicktator'))
     )
       return message.channel.send("Lo siapa ngentod, kok mau ngeban!!!");
 
