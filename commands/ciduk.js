@@ -5,13 +5,13 @@ module.exports = {
   name: "ciduk",
   description: "Add role ciduk to sinner",
   execute(message, args) {
+    console.log(args);
     if (
-      !(message.member.roles.cache.some(role => role.name === 'Ketua Program Pendidikan Nirfaedah') ||
-      message.member.roles.cache.some(role => role.name === 'Dicktator'))
+      !(message.member.roles.cache.some(r=>["Ketua Program Pendidikan Nirfaedah", "Dicktator"].includes(r.name)))
     )
       return message.channel.send("Lo siapa ngentod, kok mau ngeban!!!");
 
-    if (!args[0].startsWith("<@"))
+    if (!String(args[0]).startsWith("<@"))
       return message.channel.send(
         "perintahnya yang jelas cok (ne ciduk {USER} {BERAPA MENIT})"
       );
@@ -21,14 +21,13 @@ module.exports = {
       );
 
     //ciduk goes here
-    let role = message.guild.roles.find((r) => r.name === "Terciduk");
     let member = message.mentions.members.first();
     message.channel
       .send(`**Lapor Pak, tersangka atas nama ${args[0]} sudah saya amankan. Saya amankan selama ${args[1]} menit dikarenakan tersangka diduga berbuat makar. Terima kasih
     **`);
-    member.addRole(role).catch(console.error);
+    member.roles.add(['705727738383958066']).then(console.log).catch(console.error);
     setTimeout(() => {
-      member.removeRole(role).catch(console.error);
+      member.roles.remove(['705727738383958066']).then(console.log).catch(console.error);
     }, args[1] * 60 * 1000);
   },
 };
