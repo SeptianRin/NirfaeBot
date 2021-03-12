@@ -7,7 +7,7 @@ module.exports = {
   execute(message, args) {
     console.log(args);
     if (
-      !(message.member.roles.cache.some(r=>["Ketua Program Pendidikan Nirfaedah", "Dicktator"].includes(r.name)))
+      !(message.member.roles.cache.some(r=>["Ketua Program Pendidikan Estetika","Ketua Program Pendidikan Nirfaedah", "Dekan Fakultas","Wakil Dekan Fakultas"].includes(r.name)))
     )
       return message.channel.send("Lo siapa ngentod, kok mau ngeban!!!");
 
