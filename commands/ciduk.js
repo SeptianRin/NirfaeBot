@@ -13,18 +13,17 @@ module.exports = {
 
     if (!String(args[0]).startsWith("<@"))
       return message.channel.send(
-        "perintahnya yang jelas cok (ne ciduk {USER} {BERAPA MENIT})"
+        "perintahnya yang Anda masukkan kurang jelas (ne ciduk @User Menit)"
       );
     if (isNaN(args[1]))
       return message.channel.send(
-        "perintahnya yang jelas cok (ne ciduk {USER} {BERAPA MENIT})"
+        "perintahnya yang Anda masukkan kurang jelas (ne ciduk @User Menit)"
       );
 
     //ciduk goes here
     let member = message.mentions.members.first();
     message.channel
-      .send(`**Lapor Pak, tersangka atas nama ${args[0]} sudah saya amankan. Saya amankan selama ${args[1]} menit dikarenakan tersangka diduga berbuat makar. Terima kasih
-    **`);
+      .send(`Baiklah, aku telah menyingkirkan ${args[0]} dari sini selama ${args[1]} menit. Mereka yang tidak patuh akan menjalani hukuman.`);
     member.roles.add(['705727738383958066']).then(console.log).catch(console.error);
     setTimeout(() => {
       member.roles.remove(['705727738383958066']).then(console.log).catch(console.error);

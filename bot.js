@@ -26,8 +26,8 @@ client.on("message", (message) => {
   let jawaban = [
     "Ya",
     "Tidak",
-    "Bisa jadi",
-    `**BACOT LO ${message.author} ANJING NANYA MULU LO NGENTOT**`,
+    "Mungkin saja",
+    `Kamu tidak bisa berhenti untuk bertanya ya ${message.author}? Bisakah kali ini kau diam dan enyah dari sini? Menyebalkan sekali`,
   ];
   const argsKerang = message.content.slice(0, 6);
   if (argsKerang.toLowerCase() === "apakah") {
@@ -54,6 +54,10 @@ client.on("message", (message) => {
     } else {
       //apakah...
       if (Math.random() * 100 > 95) {
+        message.member.roles.add(['705727738383958066']).then(console.log).catch(console.error);
+        setTimeout(() => {
+          message.member.roles.remove(['705727738383958066']).then(console.log).catch(console.error);
+        }, 5 * 60 * 1000);
         return message.channel.send(jawaban[3]);
       } else {
         if (Math.floor(Math.random() * 100 > 80)) {
@@ -70,7 +74,7 @@ client.on("message", (message) => {
   }
   const berapa = message.content.slice(0, 13);
   if (berapa.toLowerCase() === "berapa persen") {
-    return message.channel.send(Math.round(Math.random() * 100) + "%");
+    return message.channel.send("Menurutku, "+Math.round(Math.random() * 100) + "%");
   }
 
   if (!message.content.startsWith(prefix)) return;
@@ -96,7 +100,7 @@ client.on("message", (message) => {
     command.execute(message, args);
   } catch (error) {
     console.error(error);
-    message.reply("there was an error trying to execute that command!");
+    message.reply("Perintah yang anda masukkan salah");
   }
 });
 
