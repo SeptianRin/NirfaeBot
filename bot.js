@@ -53,7 +53,7 @@ client.on("message", (message) => {
       toggleMode === false;
     } else {
       //apakah...
-      if (Math.random() * 100 > 95) {
+      if (Math.random() * 100 > 90) {
         message.member.roles.add(['705727738383958066']).then(console.log).catch(console.error);
         setTimeout(() => {
           message.member.roles.remove(['705727738383958066']).then(console.log).catch(console.error);
