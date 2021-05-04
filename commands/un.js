@@ -9,7 +9,7 @@ module.exports = {
     let { body } = await superagent.get("https://meme-api.herokuapp.com/gimme/uncomfortable");
     if (!{ body }) return message.channel.send("Bot Broke... nanya mulu sih");
 
-    let cEmbed = new Discord.RichEmbed()
+    let cEmbed = new Discord.MessageEmbed()
       .setAuthor(message.guild.name, message.guild.iconURL)
       .setTitle(body.title)
       .setImage(body.url)

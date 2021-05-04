@@ -12,7 +12,7 @@ module.exports = {
     //let { deskripsi } = await superagent.get("https://some-random-api.ml/facts/cat");
     if (!{ gambar,fact }) return message.channel.send("Bot Broke... nanya mulu sih");
 
-    let cEmbed = new Discord.RichEmbed()
+    let cEmbed = new Discord.MessageEmbed()
       .setAuthor("Nirfaedah & Ｅｓｔｅｔｉｋａ", message.guild.iconURL)
       .setImage(gambar.link)
       .setDescription(fact.fact)
