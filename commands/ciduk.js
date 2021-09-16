@@ -9,7 +9,7 @@ module.exports = {
     if (
       !(message.member.roles.cache.some(r=>["Ketua Program Pendidikan Estetika","Ketua Program Pendidikan Nirfaedah", "Dekan Fakultas","Wakil Dekan Fakultas"].includes(r.name)))
     )
-      return message.channel.send("Lo siapa ngentod, kok mau ngeban!!!");
+      return message.channel.send("Kamu siapa? beraninya menyuruhku.");
 
     if (!String(args[0]).startsWith("<@"))
       return message.channel.send(
