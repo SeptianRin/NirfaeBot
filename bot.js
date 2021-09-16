@@ -63,7 +63,7 @@ client.on("message", async message => {
           return message.channel.send(jawaban[4]);
       }else{
           //apakah...
-        if (Math.random() * 100 > 92.5) {
+        if (Math.random() * 100 > 97.5) {
           message.member.roles.add(['705727738383958066']);
           setTimeout(() => {
             message.member.roles.remove(['705727738383958066']);
