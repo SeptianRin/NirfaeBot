@@ -30,7 +30,7 @@ client.on("message", async message => {
     "Tidak",
     "Mungkin saja",
     `Kamu tidak bisa berhenti untuk bertanya ya ${message.author}? Bisakah kali ini kau diam dan enyah dari sini? Menyebalkan sekali`,
-    `Kamu tidak bisa berkomunikasi dengan baik ya ${message.author}? Lebih baik kamu diam.`,
+    `Kamu tidak bisa berkomunikasi dengan baik ya ${message.author}? Lebih baik kamu diam saja.`,
   ];
   const argsKerang = message.content.slice(0, 6);
   if (argsKerang.toLowerCase() === "apakah") {
