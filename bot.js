@@ -221,7 +221,7 @@ function play(guild, song) {
     console.error(error);
     message.reply("Perintah yang anda masukkan salah");
   }
-};
+});
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.TOKEN); //BOT_TOKEN is the Client Secret
