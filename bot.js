@@ -88,7 +88,7 @@ client.on("message", async message => {
     return message.channel.send("Menurutku, "+Math.round(Math.random() * 100) + "%");
   }
 
-  /**play music**/
+  /**play music
   const serverQueue = queue.get(message.guild.id);
 
   if (message.content.startsWith(`${prefix}play`)) {
@@ -195,7 +195,7 @@ function play(guild, song) {
   dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
   serverQueue.textChannel.send(`Start playing: **${song.title}**`);
 
- /**music end **/
+  music end **/
 
   if (!message.content.startsWith(prefix)) return;
   const args = message.content.slice(prefix.length).split(/ +/);
