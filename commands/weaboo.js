@@ -1,7 +1,7 @@
 const superagent = require("superagent");
 const Discord = require("discord.js");
 module.exports = {
-  name: "un",
+  name: "weaboo",
   description: "retrieve uncomfortable meme!",
   async execute(message, args) {
     let msg = await message.channel.send("Generating...");
