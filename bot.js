@@ -88,7 +88,7 @@ client.on("message", async message => {
     return message.channel.send("Menurutku, "+Math.round(Math.random() * 100) + "%");
   }
 
-  /**play music
+  /**play music**/
   const serverQueue = queue.get(message.guild.id);
 
   if (message.content.startsWith(`${prefix}play`)) {
@@ -111,12 +111,12 @@ async function execute(message, serverQueue) {
   const voiceChannel = message.member.voice.channel;
   if (!voiceChannel)
     return message.channel.send(
-      "You need to be in a voice channel to play music!"
+      "Kamu join di voice channel mana sih!"
     );
   const permissions = voiceChannel.permissionsFor(message.client.user);
   if (!permissions.has("CONNECT") || !permissions.has("SPEAK")) {
     return message.channel.send(
-      "I need the permissions to join and speak in your voice channel!"
+      "Saya memerlukan kuasa untuk ikut dan berbicara dengan kalian di voice channel!"
     );
   }
   const songInfo = await ytdl.getInfo(args[2]);
@@ -150,7 +150,7 @@ async function execute(message, serverQueue) {
     }
   } else {
     serverQueue.songs.push(song);
-    return message.channel.send(`${song.title} has been added to the queue!`);
+    return message.channel.send(`${song.title} lagu telah ditambahkan!`);
   }
 }
 
@@ -195,7 +195,7 @@ function play(guild, song) {
   dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
   serverQueue.textChannel.send(`Start playing: **${song.title}**`);
 
- music end **/
+ /**music end **/
 
   if (!message.content.startsWith(prefix)) return;
   const args = message.content.slice(prefix.length).split(/ +/);
